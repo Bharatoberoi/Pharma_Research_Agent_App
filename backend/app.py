@@ -51,6 +51,10 @@ async def ask_agent(request: QueryRequest, background_tasks: BackgroundTasks):
     background_tasks.add_task(run_agent_task, request.query, task_id)
     return {"message": "Query is being processed", "task_id": task_id}
 
+@app.get("/")
+def root():
+    return {"message": "Hello from FastAPI!"}
+
 @app.get("/result/{task_id}")
 async def get_result(task_id: str):
     result = responses.get(task_id)
