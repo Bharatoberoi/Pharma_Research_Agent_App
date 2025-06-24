@@ -1,4 +1,6 @@
 fastapi
-uvicorn[standard]
+uvicorn
+langchain
 langchain-community
 duckduckgo-search
+openai
